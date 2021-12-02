@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "lib": ["ESNext"],
+    "module": "commonjs",
+    "outDir": "out",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2018"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "out", "coverage","src/**/**.test.ts"]
+}
