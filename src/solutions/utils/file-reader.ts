@@ -19,7 +19,7 @@ export default class FileReader {
 }
 
 export function processFile(
-  file,
+  file: string,
   lineProcessor: (str: string) => void
 ): Promise<void> {
   const reader = new FileReader(lineProcessor);

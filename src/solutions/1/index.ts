@@ -4,17 +4,29 @@ import { processFile } from "../utils/file-reader";
 
 export default class Solution implements ISolution {
   async GetSolutionA(inputFile: string): Promise<string> {
+    let prev = Number.MAX_VALUE;
+    let count = 0;
     await processFile(inputFile, (line) => {
-      throw new Error("Method not implemented.");
+      if (Number(line) > prev) {
+        count++;
+      }
+      prev = Number(line);
     });
 
-    throw new Error("Method not implemented.");
+    return count.toString();
   }
   async GetSolutionB(inputFile: string): Promise<string> {
+    const data: number[] = [];
     await processFile(inputFile, (line) => {
-      throw new Error("Method not implemented.");
+      data.push(Number(line));
     });
 
-    throw new Error("Method not implemented.");
+    let count = 0;
+    for (let i = 3; i < data.length; i++) {
+      if (data[i] > data[i - 3]) {
+        count++;
+      }
+    }
+    return count.toString();
   }
 }
