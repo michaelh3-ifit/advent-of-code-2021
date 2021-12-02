@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ISolution } from "../solution";
 import { processFile } from "../utils/file-reader";
 
