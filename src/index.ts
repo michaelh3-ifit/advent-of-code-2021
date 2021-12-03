@@ -51,7 +51,13 @@ async function execute(
   console.log(`Running ${dayandpart}...`);
 
   const start = +new Date();
-  const results = await solution[part](inputFile);
+  let results: string;
+  try {
+    results = await solution[part](inputFile);
+  } catch (e) {
+    console.error(color.red((e as Error).toString()));
+    return;
+  }
   const timeElapsed = +new Date() - start;
   console.log(
     `Result: ${color.bgBlue(color.whiteBright(results))} (${timeElapsed} ms)`
