@@ -56,6 +56,7 @@ async function execute(
     results = await solution[part](inputFile);
   } catch (e) {
     console.error(color.red((e as Error).toString()));
+    console.error(color.red((e as Error).stack || "No stack trace"));
     return;
   }
   const timeElapsed = +new Date() - start;
